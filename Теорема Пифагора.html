@@ -18,29 +18,118 @@
         </nav>
     </header>
 
-    <section id="generate" class="card">
+    <section id="generate" class="card fade-in">
         <h2>Генерация задач</h2>
-        <img src="images/pithagorean_theorem.png" alt="Иллюстрация теоремы Пифагора" class="img-center">
-        <div class="button-container">
-            <button id="generateBtn">Сгенерировать задачу</button>
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop" alt="Иллюстрация теоремы Пифагора" class="img-center zoom-hover" loading="lazy">
+            <div class="image-overlay"></div>
         </div>
-        <div id="task"></div>
+        <div class="button-container">
+            <button id="generateBtn">
+                <span class="btn-icon">🎲</span>
+                <span>Сгенерировать задачу</span>
+            </button>
+        </div>
+        <div id="task" class="result-box"></div>
     </section>
 
-    <section id="solutions" class="card">
+    <section id="solutions" class="card fade-in">
         <h2>Решение задач</h2>
-        <img src="images/math_study.jpg" alt="Изучение математики" class="img-center">
-        <div class="button-container">
-            <button id="calculateBtn">Рассчитать гипотенузу</button>
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&h=400&fit=crop" alt="Изучение математики" class="img-center zoom-hover" loading="lazy">
+            <div class="image-overlay"></div>
         </div>
-        <input type="number" id="catetA" placeholder="Длина катета A" />
-        <input type="number" id="catetB" placeholder="Длина катета B" />
-        <div id="result"></div>
+        <div class="button-container">
+            <button id="calculateBtn">
+                <span class="btn-icon">🧮</span>
+                <span>Рассчитать гипотенузу</span>
+            </button>
+        </div>
+        <div class="input-group">
+            <input type="number" id="catetA" placeholder="Катет A" />
+            <span class="input-divider">+</span>
+            <input type="number" id="catetB" placeholder="Катет B" />
+            <span class="input-divider">=</span>
+            <span class="input-result-placeholder">?</span>
+        </div>
+        <div id="result" class="result-box highlight"></div>
+    </section>
+
+    <!-- Раздел: История -->
+    <section id="history" class="card fade-in history-section">
+        <h2>📜 История открытия</h2>
+        <div class="history-content">
+            <div class="history-card scroll-reveal">
+                <div class="history-icon">🏺</div>
+                <h3>Древний Вавилон и Египет</h3>
+                <p>Задолго до Пифагора (около 1900 г. до н.э.) вавилоняне уже знали о свойстве прямоугольного треугольника. На глиняных табличках найдены списки «пифагоровых троек». Египтяне использовали веревку с 13 узлами для построения прямого угла при строительстве пирамид (треугольник 3-4-5).</p>
+            </div>
+            
+            <div class="history-card scroll-reveal" style="transition-delay: 0.2s;">
+                <div class="history-icon">🏛️</div>
+                <h3>Школа Пифагора</h3>
+                <p>Около 500 г. до н.э. древнегреческий философ Пифагор Самосский первым <strong>доказал</strong> эту теорему математически. Легенда гласит, что в честь открытия он принес в жертву богам 100 быков. Хотя сам Пифагор не оставил записей, его ученики сохранили это знание.</p>
+            </div>
+
+            <div class="history-card scroll-reveal" style="transition-delay: 0.4s;">
+                <div class="history-icon">📐</div>
+                <h3>Геометрическое доказательство</h3>
+                <p>Суть открытия проста: если построить квадраты на каждой стороне прямоугольного треугольника, то площадь квадрата на гипотенузе будет в точности равна сумме площадей квадратов на катетах.</p>
+                <div class="formula-box">a² + b² = c²</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Тренажер ОГЭ -->
+    <section id="oge-practice" class="card fade-in oge-section">
+        <h2>📝 Тренажер ОГЭ</h2>
+        <p class="section-desc">Решайте задачи в формате экзамена. Внимательно читайте условие и смотрите на схему.</p>
+        
+        <div class="task-container glass-panel">
+            <div class="task-header">
+                <span class="badge" id="task-type">Задача №1</span>
+                <span class="badge difficulty" id="task-streak">Серия: 0 🔥</span>
+            </div>
+            
+            <div class="task-content">
+                <div class="task-visual">
+                    <canvas id="taskCanvas" width="320" height="220"></canvas>
+                </div>
+                <div class="task-text" id="task-text">
+                    Загрузка задачи...
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="user-answer">Ваш ответ:</label>
+                <div class="input-row">
+                    <input type="number" id="user-answer" placeholder="Введите число" step="0.1">
+                    <button class="btn btn-primary" onclick="checkAnswer()">Ответить</button>
+                </div>
+            </div>
+
+            <div id="feedback" class="feedback hidden">
+                <!-- Результат проверки -->
+            </div>
+
+            <div class="task-controls">
+                <button class="btn btn-secondary" onclick="generateTask()">Следующая задача</button>
+                <button class="btn btn-outline" onclick="toggleHint()">💡 Подсказка</button>
+            </div>
+            
+            <div id="hint-box" class="hint-box hidden">
+                <strong>Формула:</strong> $a^2 + b^2 = c^2$, где $c$ — гипотенуза.
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Maxwell</p>
+        <p>&copy; 2026 Maxwell</p>
     </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
     <script src="script.js"></script>
 </body>
