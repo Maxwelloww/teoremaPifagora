@@ -360,3 +360,93 @@ footer {
         font-size: 14px;
     }
 }
+
+/* Стили для раздела истории */
+.history-section {
+    max-width: 900px;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.history-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.history-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9));
+}
+
+.history-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+    text-align: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.history-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.history-card p {
+    line-height: 1.7;
+    color: #555;
+    text-align: justify;
+}
+
+.formula-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(106, 130, 251, 0.4);
+    letter-spacing: 2px;
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Адаптивность для истории */
+@media (max-width: 600px) {
+    .history-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .history-card {
+        padding: 20px;
+    }
+    
+    .formula-box {
+        font-size: 20px;
+        padding: 12px 20px;
+    }
+}
