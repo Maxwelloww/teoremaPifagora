@@ -20,22 +20,39 @@
 
     <section id="generate" class="card fade-in">
         <h2>Генерация задач</h2>
-        <img src="images/pithagorean_theorem.png" alt="Иллюстрация теоремы Пифагора" class="img-center zoom-hover">
-        <div class="button-container">
-            <button id="generateBtn">Сгенерировать задачу</button>
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop" alt="Иллюстрация теоремы Пифагора" class="img-center zoom-hover" loading="lazy">
+            <div class="image-overlay"></div>
         </div>
-        <div id="task"></div>
+        <div class="button-container">
+            <button id="generateBtn">
+                <span class="btn-icon">🎲</span>
+                <span>Сгенерировать задачу</span>
+            </button>
+        </div>
+        <div id="task" class="result-box"></div>
     </section>
 
     <section id="solutions" class="card fade-in">
         <h2>Решение задач</h2>
-        <img src="images/math_study.jpg" alt="Изучение математики" class="img-center zoom-hover">
-        <div class="button-container">
-            <button id="calculateBtn">Рассчитать гипотенузу</button>
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&h=400&fit=crop" alt="Изучение математики" class="img-center zoom-hover" loading="lazy">
+            <div class="image-overlay"></div>
         </div>
-        <input type="number" id="catetA" placeholder="Длина катета A" />
-        <input type="number" id="catetB" placeholder="Длина катета B" />
-        <div id="result"></div>
+        <div class="button-container">
+            <button id="calculateBtn">
+                <span class="btn-icon">🧮</span>
+                <span>Рассчитать гипотенузу</span>
+            </button>
+        </div>
+        <div class="input-group">
+            <input type="number" id="catetA" placeholder="Катет A" />
+            <span class="input-divider">+</span>
+            <input type="number" id="catetB" placeholder="Катет B" />
+            <span class="input-divider">=</span>
+            <span class="input-result-placeholder">?</span>
+        </div>
+        <div id="result" class="result-box highlight"></div>
     </section>
 
     <footer>
