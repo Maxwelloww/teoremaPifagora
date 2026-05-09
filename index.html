@@ -80,6 +80,49 @@
         </div>
     </section>
 
+    <!-- Раздел: Тренажер ОГЭ -->
+    <section id="oge-practice" class="card fade-in oge-section">
+        <h2>📝 Тренажер ОГЭ</h2>
+        <p class="section-desc">Решайте задачи в формате экзамена. Внимательно читайте условие и смотрите на схему.</p>
+        
+        <div class="task-container glass-panel">
+            <div class="task-header">
+                <span class="badge" id="task-type">Задача №1</span>
+                <span class="badge difficulty" id="task-streak">Серия: 0 🔥</span>
+            </div>
+            
+            <div class="task-content">
+                <div class="task-visual">
+                    <canvas id="taskCanvas" width="320" height="220"></canvas>
+                </div>
+                <div class="task-text" id="task-text">
+                    Загрузка задачи...
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="user-answer">Ваш ответ:</label>
+                <div class="input-row">
+                    <input type="number" id="user-answer" placeholder="Введите число" step="0.1">
+                    <button class="btn btn-primary" onclick="checkAnswer()">Ответить</button>
+                </div>
+            </div>
+
+            <div id="feedback" class="feedback hidden">
+                <!-- Результат проверки -->
+            </div>
+
+            <div class="task-controls">
+                <button class="btn btn-secondary" onclick="generateTask()">Следующая задача</button>
+                <button class="btn btn-outline" onclick="toggleHint()">💡 Подсказка</button>
+            </div>
+            
+            <div id="hint-box" class="hint-box hidden">
+                <strong>Формула:</strong> $a^2 + b^2 = c^2$, где $c$ — гипотенуза.
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2025 Maxwell</p>
     </footer>
