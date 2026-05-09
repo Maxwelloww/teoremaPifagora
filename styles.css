@@ -1,8 +1,9 @@
+/* Оптимизированные стили - без дублирования */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f0f4f8; /* Светлый фон */
+    background-color: #f0f4f8;
     color: #333;
 }
 
@@ -45,7 +46,7 @@ nav a:hover::after {
 }
 
 .button-container {
-    margin: 20px 0; /* Добавлено для отступа вокруг кнопки */
+    margin: 20px 0;
 }
 
 button {
@@ -57,6 +58,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     font-weight: 600;
+    will-change: transform;
 }
 
 button:hover {
@@ -83,88 +85,12 @@ footer {
     margin-top: 20px;
     font-weight: 400;
 }
+
 .img-center {
     display: block;
-    margin: 20px auto; /* Центрирует изображение */
-    max-width: 80%; /* Ограничивает ширину изображения */
-    height: auto; /* Поддерживает пропорции изображений */
-    border-radius: 10px; /* Скругленные углы для изображения */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта глубины */
-}
-body {
-    background-color: #121212; /* Темный фон */
-    color: #ffffff; /* Светлый текст */
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #1f1f1f; /* Темный фон для заголовка */
-    padding: 20px;
-    text-align: center;
-}
-
-nav a {
-    color: #ffffff; /* Светлый цвет для навигации */
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-.card {
-    background-color: #1e1e1e; /* Темный фон для секций */
-    border-radius: 8px;
-    padding: 20px;
     margin: 20px auto;
-    max-width: 800px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-h1, h2 {
-    color: #f0f0f0; /* Светлый цвет заголовков */
-}
-
-.img-center {
-    display: block;
-    margin: 0 auto;
-}
-
-.button-container {
-    text-align: center;
-}
-
-button {
-    background-color: #007BFF; /* Цвет кнопок */
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3; /* Цвет кнопок при наведении */
-}
-
-input {
-    width: calc(50% - 10px);
-    margin: 10px 5px;
-    padding: 10px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background-color: #333;
-    color: #ffffff;
-}
-
-input::placeholder {
-    color: #aaaaaa; /* Цвет заглушки в input */
-}
-
-footer {
-    background-color: #1f1f1f; /* Темный фон для подвала */
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
